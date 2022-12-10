@@ -19,3 +19,15 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30, hasDog: false },
   { id: '9', name: 'Daniel Cane', age: 51, hasDog: true },
 ];
+
+function filterDogOwners(index) {
+  const Dogs = index.filter(item => item.hasDog);
+  console.log(Dogs);
+}
+filterDogOwners(users);
+
+function filterAdults(users) {
+  const Adults = users.filter(value => value.age >= 18);
+  console.log(Adults);
+}
+filterAdults(users);

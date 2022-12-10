@@ -19,3 +19,18 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+function getUsersAverage(value) {
+  const Adults = value
+  .reduce((a, b) => (a + b.age / value.length), 0).toFixed();
+  console.log (`Vidurkis: ${Adults}`)
+}
+getUsersAverage(users);
+
+function getUsersName(value){
+  const Users = value
+  .map(index => index.name);
+  console.log(Users)
+}
+
+getUsersName(users)

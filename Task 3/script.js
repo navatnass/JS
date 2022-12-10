@@ -12,3 +12,38 @@ būti stilizuota su CSS ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+const result = document.getElementById('output');
+const btn = document.getElementById('btn');
+
+btn.addEventListener('click', getData);
+btn.addEventListener('click', () => {
+    const msg = document.getElementById('message')
+    msg.textContent = ' ';
+})
+
+function newTable(users) {
+    const table = document.createElement('table');
+    users.forEach(element => {
+        table.innerHTML += `<tr><td><img src=${element.avatar_url}<tr><tr><td>${element.login}</td></tr></tr>`
+    })
+    result.append(table)
+}
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.github.com/users');
+    if (response.ok) {
+      const data = await response.json();
+    //   console.log(data);
+      return data
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function getData() {
+   fetchData().then(data => newTable(data))
+};
+
+
