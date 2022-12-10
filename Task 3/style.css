@@ -59,3 +59,27 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+table {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+table img {
+  margin: 5px;
+  width: auto;
+  height: 175px;
+  opacity: 1;
+  transition: opacity 330ms ease-in-out;
+  transition: transform 230ms ease-in-out;
+}
+
+table img:hover {
+  margin: 5px;
+  width: auto;
+  opacity: 80%;
+  transform: rotate(1deg)
+}
